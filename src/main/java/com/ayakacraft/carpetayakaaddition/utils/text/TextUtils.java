@@ -122,9 +122,17 @@ public final class TextUtils {
         //#endif
     }
 
+    public static void sendMessageToPlayer(ServerPlayer player, Component component, boolean overlay) {
+        //#if MC>=260000
+        //$$ player.sendSystemMessage(component, overlay);
+        //#else
+        player.displayClientMessage(component, overlay);
+        //#endif
+    }
+
     public static void broadcast(MinecraftServer server, Component txt, boolean overlay) {
         sendMessageToServer(server, txt);
-        server.getPlayerList().getPlayers().forEach(p -> p.displayClientMessage(txt, overlay));
+        server.getPlayerList().getPlayers().forEach(player -> sendMessageToPlayer(player, txt, overlay));
     }
 
     public static void broadcast(MinecraftServer server, Component textForServer, Function<ServerPlayer, Component> textFunction, boolean overlay) {
@@ -132,7 +140,7 @@ public final class TextUtils {
         server.getPlayerList().getPlayers().forEach(player -> {
             Component t = textFunction.apply(player);
             if (t != null) {
-                player.displayClientMessage(t, overlay);
+                sendMessageToPlayer(player, t, overlay);
             }
         });
     }

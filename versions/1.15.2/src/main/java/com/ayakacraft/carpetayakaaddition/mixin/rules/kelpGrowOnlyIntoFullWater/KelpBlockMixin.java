@@ -24,7 +24,6 @@ import com.ayakacraft.carpetayakaaddition.CarpetAyakaSettings;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.KelpBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
@@ -37,10 +36,20 @@ public class KelpBlockMixin {
             method = "tick",
             at = @At(
                     value = "INVOKE",
+                    //#if MC>=11500
                     target = "Lnet/minecraft/server/level/ServerLevel;setBlockAndUpdate(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Z"
+                    //#else
+                    //$$ target = "Lnet/minecraft/world/level/Level;setBlockAndUpdate(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Z"
+                    //#endif
             )
     )
-    protected boolean checkWaterLevel(ServerLevel instance, BlockPos blockPos, BlockState blockState, Operation<Boolean> original) {
+    protected boolean checkWaterLevel(
+            //#if MC>=11500
+            net.minecraft.server.level.ServerLevel instance,
+            //#else
+            //$$ net.minecraft.world.level.Level instance,
+            //#endif
+            BlockPos blockPos, BlockState blockState, Operation<Boolean> original) {
         if (!CarpetAyakaSettings.kelpGrowOnlyIntoFullWater || instance.getFluidState(blockPos).getAmount() == 8) {
             return original.call(instance, blockPos, blockState);
         }
