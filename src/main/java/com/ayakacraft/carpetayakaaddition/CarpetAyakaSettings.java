@@ -130,7 +130,7 @@ public final class CarpetAyakaSettings {
 
     @Rule(
             categories = {AYAKA, EXPERIMENTAL, BUGFIX, BOT},
-            modConditions = @ModCondition(value = ModUtils.GCA_ID)
+            modConditions = @ModCondition(value = ModUtils.GCA_ID, versionPredicates = "<2.11.0")
     )
     public static boolean fakePlayerResidentBackupFix = false;
 

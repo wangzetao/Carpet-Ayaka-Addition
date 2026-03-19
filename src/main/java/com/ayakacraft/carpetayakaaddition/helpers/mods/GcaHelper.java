@@ -20,6 +20,7 @@
 
 package com.ayakacraft.carpetayakaaddition.helpers.mods;
 
+//#if MC<260000
 import carpet.patches.EntityPlayerMPFake;
 import com.ayakacraft.carpetayakaaddition.CarpetAyakaAddition;
 import com.google.gson.JsonElement;
@@ -34,14 +35,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import static com.ayakacraft.carpetayakaaddition.CarpetAyakaAddition.LOGGER;
+//#endif
 
 public final class GcaHelper {
 
-    //#if MC>=260000
-    //$$ // Workaround
-    //$$ private static final boolean fakePlayerResident = false;
-    //#endif
-
+    //#if MC<260000
     private static final java.lang.reflect.Method savePlayerMethod;
 
     static {
@@ -124,5 +122,6 @@ public final class GcaHelper {
             LOGGER.warn(e.getMessage(), e);
         }
     }
+    //#endif
 
 }

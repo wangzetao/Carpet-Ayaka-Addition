@@ -32,10 +32,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Restriction(require = @Condition(ModUtils.GCA_ID))
+@Restriction(require = @Condition(value = ModUtils.GCA_ID, versionPredicates = "<2.11.0"))
 @Mixin(MinecraftServer.class)
 public class MinecraftServerMixin {
 
+    //#if MC<260000
     @Inject(
             //#if MC>=11600
             method = "runServer",
@@ -60,5 +61,6 @@ public class MinecraftServerMixin {
             GcaHelper.storeFakesIfNeeded((MinecraftServer) (Object) this);
         }
     }
+    //#endif
 
 }
