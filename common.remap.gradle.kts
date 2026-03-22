@@ -136,14 +136,8 @@ dependencies {
         exclude(group = "com.github.gnembon", module = "fabric-carpet")
     }
 
-    if (mcVersionNumber >= 12000) {
-        modImplementation("maven.modrinth:gca:${properties["gugle_version"]}") {
-            exclude(group = "carpet", module = "fabric-carpet")
-        }
-    } else {
-        modCompileOnly("maven.modrinth:gca:${properties["gugle_version"]}") {
-            exclude(group = "carpet", module = "fabric-carpet")
-        }
+    modCompileOnly("maven.modrinth:gca:${properties["gugle_version"]}") {
+        exclude(group = "carpet", module = "fabric-carpet")
     }
 
     if (!ci) {
