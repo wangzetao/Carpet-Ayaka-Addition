@@ -48,7 +48,12 @@ public class ReplaceDiskMixin {
     private boolean shouldNotApply() {
         return CarpetAyakaSettings.frostWalkerNoFreezing
                 && blockState instanceof SimpleStateProvider
-                && blockState.getState(null, null).getBlock() == Blocks.FROSTED_ICE;
+                //#if MC>=260000
+                //$$ && blockState.getState(null, null, null).getBlock()
+                //#else
+                && blockState.getState(null, null).getBlock()
+                //#endif
+                == Blocks.FROSTED_ICE;
     }
 
     @Inject(method = "apply", at = @At("HEAD"), cancellable = true)

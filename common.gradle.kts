@@ -114,10 +114,6 @@ dependencies {
         exclude(group = "carpet", module = "fabric-carpet")
     }
 
-//    implementation("maven.modrinth:gca:${properties["gugle_version"]}") {
-//        exclude(group = "carpet", module = "fabric-carpet")
-//    }
-
     if (!ci) {
         // For runtime mods
         runtimeOnly("net.fabricmc.fabric-api:fabric-api:${properties["fabric_api_version"]}")
@@ -335,12 +331,12 @@ publisher {
 
     curseDepends {
         required("carpet")
-        optional("carpet-tis-addition", "guglecarpetaddition")
+        optional("carpet-tis-addition")
     }
 
     modrinthDepends {
         required("carpet")
-        optional("carpet-tis-addition", "gca")
+        optional("carpet-tis-addition")
     }
 
     github {

@@ -21,28 +21,17 @@
 package com.ayakacraft.carpetayakaaddition.mixin.rules.fluidNoPushPlayer;
 
 import com.ayakacraft.carpetayakaaddition.CarpetAyakaSettings;
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
 
-@Mixin(Entity.class)
-public class EntityMixin {
+@Mixin(Player.class)
+public class PlayerMixin {
 
-    @WrapOperation(
-            method = "updateFluidHeightAndDoFluidPushing",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/phys/Vec3;length()D")
-    )
-    private double noPushing(Vec3 instance, Operation<Double> original) {
-        if (CarpetAyakaSettings.fluidNoPushPlayer) {
-            if (((Object) this) instanceof Player) {
-                return -1D;
-            }
-        }
-        return original.call(instance);
+    @WrapMethod(method = "isPushedByFluid")
+    private boolean noPushing(Operation<Boolean> original) {
+        return !CarpetAyakaSettings.fluidNoPushPlayer && original.call();
     }
 
 }
