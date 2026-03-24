@@ -42,6 +42,7 @@
     "rules.itemDiscardAge.ItemEntityMixin",
     "rules.kelpGrowOnlyIntoFullWater.KelpBlockMixin",
     "rules.legacyHoneyBlockSliding.HoneyBlockMixin",
+    "rules.legacyInsideBlockCheckReintroduce.EntityMixin",
     "rules.maxPlayersOverwrite.PlayerListMixin",
     "rules.reasonableStalactiteDamage.PointedDripstoneBlockMixin",
     "rules.slimeNoBounceUpPlayer.SlimeBlockMixin",

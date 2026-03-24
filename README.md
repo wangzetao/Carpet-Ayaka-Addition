@@ -163,6 +163,7 @@ Logs the change of points-of-interest (experimental)
 - [kelpGrowOnlyIntoFullWater](#kelpgrowonlyintofullwater)
 - [killItemAwaitSeconds](#killitemawaitseconds)
 - [legacyHoneyBlockSliding](#legacyhoneyblocksliding-1212)
+- [legacyInsideBlockCheckReintroduce](#legacyinsideblockcheckreintroduce-1219)
 - [maxPlayersOverwrite](#maxplayersoverwrite)
 - [reasonableStalactiteDamage](#reasonablestalactitedamage-118)
 - [slimeNoBouncePlayer](#slimenobounceplayer)
@@ -423,6 +424,17 @@ See [MC-278572](https://bugs.mojang.com/browse/MC/issues/MC-278572) and [MC-2755
 - Default value: `false`
 - Suggested options: `false`, `true`
 - Categories: `AYAKA`, `BUGFIX`, `REINTRODUCE`
+
+#### legacyInsideBlockCheckReintroduce (1.21.9+)
+
+Changes the way entity tests the block it's in back to the original way in 1.21.1 and below
+
+See [MC-92875](https://bugs.mojang.com/browse/MC/issues/MC-92875)
+
+- Type: `boolean`
+- Default value: `false`
+- Suggested options: `false`, `true`
+- Categories: `AYAKA`, `REINTRODUCE`, `EXPERIMENTAL`
 
 #### maxPlayersOverwrite
 

@@ -192,6 +192,12 @@ public final class CarpetAyakaSettings {
     public static boolean legacyHoneyBlockSliding = false;
 
     @Rule(
+            categories = {AYAKA, REINTRODUCE, EXPERIMENTAL},
+            modConditions = @ModCondition(versionPredicates = ">=1.21.9")
+    )
+    public static boolean legacyInsideBlockCheckReintroduce = false;
+
+    @Rule(
             categories = {AYAKA},
             validators = Validators.UnsignedIntegerValidator.class,
             options = {"0", "8", "10", "20", "50", "100"},

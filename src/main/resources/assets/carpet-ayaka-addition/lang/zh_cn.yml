@@ -185,6 +185,11 @@ carpet:
       desc: 将非生物实体在蜂蜜块上滑落时的速度计算替换为 1.21.1 及更低版本中的方法
       extra:
         "0": 参见 MC-278572 和 MC-275537
+    legacyInsideBlockCheckReintroduce:
+      name: 老式实体所在方块检测再引入
+      desc: 将实体检测其所在方块的方式替换为 1.21.1 及更低版本中的方法
+      extra:
+        "0": 参见 MC-92875
     maxPlayersOverwrite:
       name: 最大玩家数量重写
       desc: 重写服务器最大玩家数量

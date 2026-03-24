@@ -163,6 +163,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 - [kelpGrowOnlyIntoFullWater](#海带只向满水生长-kelpgrowonlyintofullwater)
 - [killItemAwaitSeconds](#清除掉落物执行延迟-killitemawaitseconds)
 - [legacyHoneyBlockSliding](#老式蜂蜜块滑落-legacyhoneyblocksliding-1212)
+- [legacyInsideBlockCheckReintroduce](#老式实体所在方块检测再引入-legacyinsideblockcheckreintroduce-1219)
 - [maxPlayersOverwrite](#最大玩家数量重写-maxplayersoverwrite)
 - [reasonableStalactiteDamage](#合理的钟乳石伤害-reasonablestalactitedamage-118)
 - [slimeNoBounceUpPlayer](#黏液块不弹起玩家-slimenobounceupplayer)
@@ -421,6 +422,17 @@ give 命令的限制乘数
 - 默认值: `false`
 - 参考选项: `false`, `true`
 - 分类: `AYAKA`, `BUGFIX`, `REINTRODUCE`
+
+#### 老式实体所在方块检测再引入 (legacyInsideBlockCheckReintroduce) (1.21.9+)
+
+将实体检测其所在方块的方式替换为 1.21.1 及更低版本中的方法
+
+参见 [MC-92875](https://bugs.mojang.com/browse/MC/issues/MC-92875)
+
+- 类型: `boolean`
+- 默认值: `false`
+- 参考选项: `false`, `true`
+- 分类: `AYAKA`, `REINTRODUCE`, `EXPERIMENTAL`
 
 #### 最大玩家数量重写 (maxPlayersOverwrite)
 
