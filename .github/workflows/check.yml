@@ -2,20 +2,11 @@ name: Build & Publish
 
 on:
   push:
-    tags:
-      - v*.*.*
+    branches:
+      - dev
 
 env:
   JAVA_VERSION: 25
-  BUILD_RELEASE: "true"
-  CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
-  MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  AYAKA_MAVEN_TOKEN: ${{ secrets.AYAKA_MAVEN_TOKEN }}
-  REPO: ${{ github.repository }}
-  REPO_URL: "${{ github.server_url }}/${{ github.repository }}"
-  DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-  TAG: ${{ github.ref_name }}
 
 permissions:
   contents: write
@@ -44,5 +35,5 @@ jobs:
         if: ${{ runner.os != 'Windows' }}
         run: chmod +x ./gradlew
 
-      - name: Build and Publish
-        run: ./gradlew clean buildAndGather publishAll sendDiscord --no-daemon --warning-mode all --stacktrace
+      - name: Build
+        run: ./gradlew clean buildAndGather --no-daemon --warning-mode all --stacktrace
