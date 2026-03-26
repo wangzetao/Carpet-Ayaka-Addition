@@ -80,6 +80,13 @@ repositories {
         }
     }
     maven {
+        name = "Nucleoid"
+        url = uri("https://maven.nucleoid.xyz/")
+        content {
+            includeGroup("eu.pb4")
+        }
+    }
+    maven {
         name = "Jitpack"
         url = uri("https://jitpack.io")
     }
