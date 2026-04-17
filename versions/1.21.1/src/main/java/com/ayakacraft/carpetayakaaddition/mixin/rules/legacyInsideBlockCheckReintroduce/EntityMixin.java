@@ -26,7 +26,7 @@ import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
 import net.minecraft.world.entity.Entity;
 import org.spongepowered.asm.mixin.Mixin;
 
-@Restriction(require = @Condition(value = ModUtils.MC_ID, versionPredicates = ">=1.21.9"))
+@Restriction(require = @Condition(value = ModUtils.MC_ID, versionPredicates = ">=1.21.2"))
 @Mixin(Entity.class)
 public class EntityMixin {
 

@@ -193,7 +193,7 @@ public final class CarpetAyakaSettings {
 
     @Rule(
             categories = {AYAKA, REINTRODUCE, EXPERIMENTAL},
-            modConditions = @ModCondition(versionPredicates = ">=1.21.9")
+            modConditions = @ModCondition(versionPredicates = ">=1.21.2")
     )
     public static boolean legacyInsideBlockCheckReintroduce = false;
 
