@@ -180,6 +180,9 @@ carpet:
     killItemAwaitSeconds:
       name: 清除掉落物执行延迟
       desc: 清理掉落物之前的等待秒数
+    legacyArrowHitBlock:
+      name: 老式箭矢击中方块
+      desc: 将箭矢击中方块时的回撤替换为 1.21.1 及更早版本中的方法
     legacyHoneyBlockSliding:
       name: 老式蜂蜜块滑落
       desc: 将非生物实体在蜂蜜块上滑落时的速度计算替换为 1.21.1 及更低版本中的方法

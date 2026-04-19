@@ -186,6 +186,12 @@ public final class CarpetAyakaSettings {
     public static int killItemAwaitSeconds = 5;
 
     @Rule(
+            categories = {AYAKA, REINTRODUCE, EXPERIMENTAL},
+            modConditions = @ModCondition(versionPredicates = ">=1.21.2")
+    )
+    public static boolean legacyArrowHitBlock = false;
+
+    @Rule(
             categories = {AYAKA, BUGFIX, REINTRODUCE},
             modConditions = @ModCondition(versionPredicates = ">1.21.1")
     )

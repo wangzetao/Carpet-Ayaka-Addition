@@ -154,6 +154,8 @@ carpet:
       desc: Makes kelp grow only into water source or full flowing water
     killItemAwaitSeconds:
       desc: Seconds to wait before clearing the items
+    legacyArrowHitBlock:
+      desc: Changes the way arrows recoil when shot into blocks to the original way in 1.21.1 and below
     legacyHoneyBlockSliding:
       desc: Changes the way sliding velocity of non-living entities is calculated back to the original way in 1.21.1 and below
       extra:

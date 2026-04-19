@@ -41,6 +41,7 @@
     "rules.giveLimit.GiveCommandMixin",
     "rules.itemDiscardAge.ItemEntityMixin",
     "rules.kelpGrowOnlyIntoFullWater.KelpBlockMixin",
+    "rules.legacyArrowHitBlock.AbstractArrowMixin",
     "rules.legacyHoneyBlockSliding.HoneyBlockMixin",
     "rules.legacyInsideBlockCheckReintroduce.EntityMixin",
     "rules.legacyProjectileMargin.ProjectileUtilMixin",
