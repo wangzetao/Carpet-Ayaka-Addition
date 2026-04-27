@@ -48,6 +48,7 @@
     "rules.maxPlayersOverwrite.PlayerListMixin",
     "rules.minecartDoubleEffectsFromBlockFix.EntityInvoker",
     "rules.minecartDoubleEffectsFromBlockFix.OldMinecartBehaviorMixin",
+    "rules.optimizedUpdateSuppression.CrashReportMixin",
     "rules.projectileHitThroughReintroduce.ProjectileUtilMixin",
     "rules.reasonableStalactiteDamage.PointedDripstoneBlockMixin",
     "rules.slimeNoBounceUpPlayer.SlimeBlockMixin",

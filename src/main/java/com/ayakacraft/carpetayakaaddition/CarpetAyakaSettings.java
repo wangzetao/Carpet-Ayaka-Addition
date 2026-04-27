@@ -224,6 +224,12 @@ public final class CarpetAyakaSettings {
     public static boolean minecartDoubleEffectsFromBlockFix = false;
 
     @Rule(
+            categories = {AYAKA, BUGFIX, EXPERIMENTAL, OPTIMIZATION},
+            modConditions = @ModCondition(value = ModUtils.TIS_ID)
+    )
+    public static boolean optimizedUpdateSuppression = false;
+
+    @Rule(
             categories = {AYAKA, REINTRODUCE, EXPERIMENTAL},
             modConditions = @ModCondition(versionPredicates = ">=1.21.11")
     )
