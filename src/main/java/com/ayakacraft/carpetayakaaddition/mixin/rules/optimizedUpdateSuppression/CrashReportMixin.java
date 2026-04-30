@@ -36,6 +36,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Restriction(require = @Condition(ModUtils.TIS_ID))
 @Mixin(CrashReport.class)
 public abstract class CrashReportMixin {
+
     @WrapOperation(
             method = "<init>",
             at = @At(value = "NEW", target = "()Lnet/minecraft/SystemReport;")
@@ -46,4 +47,5 @@ public abstract class CrashReportMixin {
         }
         return original.call();
     }
+
 }

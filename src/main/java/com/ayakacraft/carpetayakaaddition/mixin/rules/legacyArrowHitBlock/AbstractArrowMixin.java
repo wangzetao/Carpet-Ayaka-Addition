@@ -52,12 +52,13 @@ public abstract class AbstractArrowMixin extends Entity {
     )
     private Vec3 modifyVector(Vec3 instance, double factor, Operation<Vec3> original) {
         if (CarpetAyakaSettings.legacyArrowHitBlock) {
-            // 这里手写了 normalize，因为在 1.21.2 里 mojang 悄悄把那个 1.0E-4F 改成了 1.0E-5F
             Vec3 vec = this.position().subtract(this.oldPosition());
             double d = Math.sqrt(vec.x * vec.x + vec.y * vec.y + vec.z * vec.z);
             Vec3 vec2 = d < (double) 1.0E-4F ? Vec3.ZERO : new Vec3(vec.x / d, vec.y / d, vec.z / d);
             return original.call(vec2, factor);
-        } else return original.call(instance, factor);
+        } else {
+            return original.call(instance, factor);
+        }
     }
 
 }

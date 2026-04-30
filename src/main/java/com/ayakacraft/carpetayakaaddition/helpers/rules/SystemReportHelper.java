@@ -23,6 +23,9 @@ package com.ayakacraft.carpetayakaaddition.helpers.rules;
 import net.minecraft.SystemReport;
 
 public class SystemReportHelper {
+
+    public static final DummySystemReport DUMMY_SYSTEM_REPORT = new DummySystemReport();
+
     public static class DummySystemReport extends SystemReport {
         @Override
         public void appendToCrashReportString(StringBuilder reportAppender) {
@@ -30,5 +33,4 @@ public class SystemReportHelper {
         }
     }
 
-    public static final DummySystemReport DUMMY_SYSTEM_REPORT = new DummySystemReport();
 }

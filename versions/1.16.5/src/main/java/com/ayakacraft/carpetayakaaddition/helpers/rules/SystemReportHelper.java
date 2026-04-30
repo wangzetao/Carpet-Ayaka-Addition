@@ -19,5 +19,6 @@
  */
 
 package com.ayakacraft.carpetayakaaddition.helpers.rules;
+
 public class SystemReportHelper {
 }

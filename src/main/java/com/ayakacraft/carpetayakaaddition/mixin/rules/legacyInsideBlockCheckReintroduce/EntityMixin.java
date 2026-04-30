@@ -36,6 +36,7 @@ import org.spongepowered.asm.mixin.injection.At;
 @Restriction(require = @Condition(value = ModUtils.MC_ID, versionPredicates = ">=1.21.2"))
 @Mixin(Entity.class)
 public class EntityMixin {
+
     //#if MC >= 1.21.8
     @WrapOperation(
             method = "checkInsideBlocks(Ljava/util/List;Lnet/minecraft/world/entity/InsideBlockEffectApplier$StepBasedCollector;)V",
