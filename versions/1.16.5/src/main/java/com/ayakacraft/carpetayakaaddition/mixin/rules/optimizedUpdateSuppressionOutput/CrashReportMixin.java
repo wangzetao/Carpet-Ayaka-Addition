@@ -18,13 +18,12 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.ayakacraft.carpetayakaaddition.mixin.rules.optimizedUpdateSuppression;
+package com.ayakacraft.carpetayakaaddition.mixin.rules.optimizedUpdateSuppressionOutput;
+
 import carpettisaddition.helpers.rule.yeetUpdateSuppressionCrash.UpdateSuppressionException;
 import com.ayakacraft.carpetayakaaddition.CarpetAyakaSettings;
-import com.ayakacraft.carpetayakaaddition.helpers.rules.SystemReportHelper;
 import com.ayakacraft.carpetayakaaddition.utils.ModUtils;
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import com.llamalad7.mixinextras.sugar.Local;
 import me.fallenbreath.conditionalmixin.api.annotation.Condition;
 import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
@@ -35,13 +34,12 @@ import org.spongepowered.asm.mixin.injection.At;
 @Restriction(require = @Condition(ModUtils.TIS_ID))
 @Mixin(CrashReport.class)
 public abstract class CrashReportMixin {
-    @WrapOperation(
+
+    @WrapWithCondition(
             method = "<init>",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/CrashReport;initDetails()V")
     )
-    private void disableInitDetails(CrashReport instance, Operation<Void> original, @Local(argsOnly = true) Throwable exception) {
-        if (!(CarpetAyakaSettings.optimizedUpdateSuppression && exception instanceof UpdateSuppressionException)) {
-            original.call(instance);
-        }
+    private boolean disableInitDetails(CrashReport instance, @Local(argsOnly = true) Throwable exception) {
+        return !(CarpetAyakaSettings.optimizedUpdateSuppressionOutput && exception instanceof UpdateSuppressionException);
     }
 }

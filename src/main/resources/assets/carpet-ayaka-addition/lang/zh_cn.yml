@@ -207,8 +207,8 @@ carpet:
       desc: 修复 1.21.2+ 中脱轨矿车每刻从方块获得两次效果的问题
       extra:
         "0": 当启用时，第二次只会调用checkInsideBlocks，而不会进行其它计算（比如检测下面的方块）
-    optimizedUpdateSuppression:
-      name: 优化更新抑制
+    optimizedUpdateSuppressionOutput:
+      name: 优化更新抑制输出
       desc: 禁用更新抑制异常的系统报告生成
     projectileHitThroughReintroduce:
       name: 弹射物透过方块击中实体再引入

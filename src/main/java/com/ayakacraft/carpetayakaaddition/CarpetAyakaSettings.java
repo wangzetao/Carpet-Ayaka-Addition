@@ -227,7 +227,7 @@ public final class CarpetAyakaSettings {
             categories = {AYAKA, BUGFIX, EXPERIMENTAL, OPTIMIZATION},
             modConditions = @ModCondition(value = ModUtils.TIS_ID)
     )
-    public static boolean optimizedUpdateSuppression = false;
+    public static boolean optimizedUpdateSuppressionOutput = false;
 
     @Rule(
             categories = {AYAKA, REINTRODUCE, EXPERIMENTAL},

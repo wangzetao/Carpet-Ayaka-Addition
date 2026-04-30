@@ -18,7 +18,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.ayakacraft.carpetayakaaddition.mixin.rules.optimizedUpdateSuppression;
+package com.ayakacraft.carpetayakaaddition.mixin.rules.optimizedUpdateSuppressionOutput;
 import carpettisaddition.helpers.rule.yeetUpdateSuppressionCrash.UpdateSuppressionException;
 import com.ayakacraft.carpetayakaaddition.CarpetAyakaSettings;
 import com.ayakacraft.carpetayakaaddition.helpers.rules.SystemReportHelper;
@@ -42,7 +42,7 @@ public abstract class CrashReportMixin {
             at = @At(value = "NEW", target = "()Lnet/minecraft/SystemReport;")
     )
     private SystemReport redirectSystemReport(Operation<SystemReport> original, @Local(argsOnly = true) Throwable exception) {
-        if (CarpetAyakaSettings.optimizedUpdateSuppression && exception instanceof UpdateSuppressionException) {
+        if (CarpetAyakaSettings.optimizedUpdateSuppressionOutput && exception instanceof UpdateSuppressionException) {
             return SystemReportHelper.DUMMY_SYSTEM_REPORT;
         }
         return original.call();

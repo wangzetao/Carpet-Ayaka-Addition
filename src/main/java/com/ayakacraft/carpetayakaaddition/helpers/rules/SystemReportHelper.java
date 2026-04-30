@@ -29,7 +29,7 @@ public class SystemReportHelper {
     public static class DummySystemReport extends SystemReport {
         @Override
         public void appendToCrashReportString(StringBuilder reportAppender) {
-            reportAppender.append("-- System Details Skipped (optimizedUpdateSuppression) --\n");
+            reportAppender.append("-- System Details Skipped (optimizedUpdateSuppressionOutput) --\n");
         }
     }
 
